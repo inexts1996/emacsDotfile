@@ -1,0 +1,10 @@
+# Machine-generated compiled files
+*.elc
+
+# Claude/Codex local state
+.claude/
+.codex/
+.history/
+
+# Machine-specific customizations (optional — uncomment if needed)
+# custom.el
