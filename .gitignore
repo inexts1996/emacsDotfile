@@ -6,5 +6,8 @@
 .codex/
 .history/
 
+# IDE/tool state
+.qodo
+
 # Machine-specific customizations (optional — uncomment if needed)
 # custom.el

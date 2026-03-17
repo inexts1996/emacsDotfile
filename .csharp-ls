@@ -1,0 +1,14 @@
+{
+  "ServerPath": "C:/Users/TU/.dotnet/tools/csharp-ls.exe",
+  "LogLevel": "Debug",
+  "EnableAnalyzers": true,
+  "EnableEditorConfigSupport": true,
+  "EnableImportCompletion": true,
+  "EnableSemanticHighlighting": true,
+  "EnableCodeActions": true,
+  "DiagnosticsEnabled": true,
+  "FormattingOptions": {
+    "EnableEditorConfigSupport": true,
+    "OrganizeImports": true
+  }
+}
