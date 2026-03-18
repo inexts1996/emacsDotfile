@@ -1,0 +1,49 @@
+#+TITLE: Doom Emacs 配置变更日志
+#+AUTHOR: TU
+#+STARTUP: overview
+
+* 变更日志
+
+** 2026-03-18 配置问题修复
+
+*** 修改文件：=init.el=
+
+**** 修复 csharp 模块语法错误
+
+- *变更位置*：第 123 行
+- *变更前*：=(csharp+lsp)=
+- *变更后*：=(csharp +lsp)=
+- *原因*：=csharp= 与 =+lsp= 之间缺少空格，导致 Doom 无法识别 =+lsp= flag，C# LSP 功能实际上未被启用。修复后需执行 =doom sync=。
+
+*** 修改文件：=config.el=
+
+**** 添加 themes 目录到 custom-theme-load-path
+
+- *变更位置*：主题设置之前
+- *新增内容*：
+  #+begin_src emacs-lisp
+  (add-to-list 'custom-theme-load-path (expand-file-name "themes" doom-user-dir))
+  #+end_src
+- *原因*：=themes/= 目录中存放了 rose-pine 系列主题，但未加入加载路径。若切换到 =doom-rose-pine= 主题，Emacs 会报「找不到主题」的错误。
+
+**** 排除无 formatter 模式的自动格式化
+
+- *变更位置*：文件末尾
+- *新增内容*：
+  #+begin_src emacs-lisp
+  (after! format
+    (setq +format-on-save-enabled-modes
+          '(not sh-mode lua-mode)))
+  #+end_src
+- *原因*：=init.el= 启用了 =(format +onsave)=，但 =sh-mode= 和 =lua-mode= 未配置具体的 formatter，每次保存会触发报错或意外修改文件。通过排除这些 mode 避免干扰。
+
+*** 新增文件：=.gitmodules= — 注册 themes submodule
+
+- *原因*：=themes/= 目录已以 gitlink（mode 160000）形式存在于 git 索引，但缺少 =.gitmodules= 注册文件，导致其他人克隆此 repo 时无法自动拉取 themes 内容。
+- *新增内容*：
+  #+begin_src conf
+  [submodule "themes"]
+      path = themes
+      url = https://github.com/donniebreve/rose-pine-doom-emacs.git
+  #+end_src
+- *效果*：克隆时使用 =git clone --recurse-submodules= 可自动拉取 rose-pine 主题文件。
