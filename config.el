@@ -34,6 +34,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
+(add-to-list 'custom-theme-load-path (expand-file-name "themes" doom-user-dir))
 (setq doom-theme 'doom-monokai-pro)
 ;;(setq doom-theme 'doom-rose-pine)
 
@@ -79,3 +80,7 @@
 ;; they are implemented.
 (add-to-list 'default-frame-alist '(width . 120))    ;; 宽度为120列
 (add-to-list 'default-frame-alist '(height . 40))    ;; 高度为40行
+
+(after! format
+  (setq +format-on-save-enabled-modes
+        '(not sh-mode lua-mode)))  ;; 排除无 formatter 配置的模式，避免保存时报错
