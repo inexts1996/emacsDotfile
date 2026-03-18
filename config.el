@@ -84,3 +84,5 @@
 (after! format
   (setq +format-on-save-enabled-modes
         '(not sh-mode lua-mode)))  ;; 排除无 formatter 配置的模式，避免保存时报错
+
+(load! "inexts-org-mode")
