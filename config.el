@@ -21,9 +21,9 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;;(setq doom-font (font-spec :family "JetBrains Maple Mono" :size 16 :weight 'normal)
-;;      doom-variable-pitch-font (font-spec :family "Maple Mono NF CN" :size 13))
-(setq doom-font (font-spec :family "LXGW WenKai Mono Screen" :size 18 :weight 'regular)
+;; (setq doom-font (font-spec :family "JetBrains Maple Mono" :size 16 :weight 'normal)
+     ;; doom-variable-pitch-font (font-spec :family "Maple Mono NF CN" :size 13))
+(setq doom-font (font-spec :family "LXGW WenKai Mono Screen" :size 18 :weight 'bold)
       doom-variable-pitch-font (font-spec :family "LXGW WenKai Mono Screen" :size 16))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -35,7 +35,8 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (add-to-list 'custom-theme-load-path (expand-file-name "themes" doom-user-dir))
-(setq doom-theme 'doom-monokai-pro)
+;; (setq doom-theme 'doom-monokai-pro)
+(setq doom-theme 'modus-vivendi)
 ;;(setq doom-theme 'doom-rose-pine)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -86,3 +87,4 @@
         '(not sh-mode lua-mode)))  ;; 排除无 formatter 配置的模式，避免保存时报错
 
 (load! "inexts-org-mode")
+

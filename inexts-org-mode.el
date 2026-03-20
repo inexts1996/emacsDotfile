@@ -14,9 +14,10 @@
            :empty-lines 1)
 
           ("j" "日记" entry
-           (file+datetree "~/org/journal.org")
+           (file+olp+datetree "~/org/journal.org")
            "* %?\n  %U\n"
-           :empty-lines 1)))
+           :empty-lines 1)
+          ))
 
   ;; agenda 扫描范围
   (setq org-agenda-files '("~/org/tasks.org")))
