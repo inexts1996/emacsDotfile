@@ -17,6 +17,12 @@
            (file+olp+datetree "~/org/journal.org")
            "* %?\n  %U\n"
            :empty-lines 1)
+
+          ("p" "问题" entry
+           (file+olp+datetree "~/org/problems.org")
+           "* %?\n  %U\n"
+           :empty-lines 1)
+
           ))
 
   ;; agenda 扫描范围
