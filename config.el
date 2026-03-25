@@ -88,3 +88,13 @@
 
 (load! "inexts-org-mode")
 
+(setq initial-scratch-message
+      (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
+
+(add-hook 'lisp-interaction-mode-hook #'display-line-numbers-mode)
+(add-hook 'doom-after-init-hook
+          (lambda ()
+            (with-current-buffer "*scratch*"
+              (setq-local display-line-numbers 'relative)
+              (display-line-numbers-mode 1))))
+
