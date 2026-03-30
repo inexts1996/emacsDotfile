@@ -89,7 +89,7 @@
 (load! "inexts-org-mode")
 
 (setq initial-scratch-message
-      (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
+      (concat ";; Happy hacking, " "iNeXTs" " - Emacs ♥ you!\n\n"))
 
 (add-hook 'lisp-interaction-mode-hook #'display-line-numbers-mode)
 (add-hook 'doom-after-init-hook
@@ -98,3 +98,5 @@
               (setq-local display-line-numbers 'relative)
               (display-line-numbers-mode 1))))
 
+(use-package! mode-line-bell
+  :config (mode-line-bell-mode))

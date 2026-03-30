@@ -52,3 +52,8 @@
 
 (package! claude-code-ide
   :recipe (:host github :repo "manzaltu/claude-code-ide.el"))
+
+(package! mode-line-bell)
+
+(package! ef-themes)
+(package! org-pomodoro)
